@@ -1,0 +1,30 @@
+{
+  "npmScope": "treefood-nx-angular",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "cpu-info-ui": {
+      "tags": []
+    },
+    "cpu-info-ui-e2e": {
+      "tags": [],
+      "implicitDependencies": ["cpu-info-ui"]
+    }
+  }
+}
