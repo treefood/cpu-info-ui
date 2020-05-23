@@ -1,0 +1,69 @@
+.name {
+  display: flex;
+  margin: 5px 0;
+  text-align: center;
+  font-size: 11px;
+}
+
+.background-ellipsis {
+  stroke: mix(#121212, white, 84%);
+}
+
+.fill-ellipsis {
+  stroke: #03dac6;
+}
+
+.meter-container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 120px;
+  height: 100px;
+}
+
+.value-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  .value {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    opacity: 87%;
+  }
+  .unit {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: white;
+    opacity: 60%;
+  }
+}
+
+.min-max-values {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  [spacer] {
+    flex: 1;
+  }
+  .min {
+    text-align: left;
+  }
+  .max {
+    text-align: right;
+  }
+  .min,
+  .max {
+    max-width: 35px;
+    color: white;
+    opacity: 60%;
+    font-size: 11px;
+  }
+}

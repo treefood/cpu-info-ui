@@ -33,7 +33,10 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-
+/treefood-nx-angular-linux-armv7l
+/treefood-nx-angular-linux-x64
+/treefood-nx-angular-win32-x64
+/cpu-info-ui-linux-armv7l
 # System Files
 .DS_Store
 Thumbs.db

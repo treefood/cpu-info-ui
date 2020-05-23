@@ -1,0 +1,15 @@
+<div class="settings-page">
+  <mat-card>
+    <mat-card-title>Sensors to Include</mat-card-title>
+    <mat-card-content>
+      <div class="inclusions">
+        <div *ngFor="let sensor of sensors" class="item">
+          <mat-checkbox (change)="checkHandler($event, sensor)" color="primary"
+            >{{ sensor.Name }}
+            <span class="type">({{ sensor.SensorType }})</span></mat-checkbox
+          >
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

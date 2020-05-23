@@ -25,7 +25,10 @@
               "apps/cpu-info-ui/src/favicon.ico",
               "apps/cpu-info-ui/src/assets"
             ],
-            "styles": ["apps/cpu-info-ui/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/cpu-info-ui/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +86,10 @@
               "apps/cpu-info-ui/tsconfig.app.json",
               "apps/cpu-info-ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/cpu-info-ui/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/cpu-info-ui/**"
+            ]
           }
         },
         "test": {
@@ -118,9 +124,88 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/cpu-info-ui-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/cpu-info-ui-e2e/**"]
+            "tsConfig": [
+              "apps/cpu-info-ui-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/cpu-info-ui-e2e/**"
+            ]
           }
+        }
+      }
+    },
+    "cpu-info-module": {
+      "projectType": "library",
+      "root": "libs/cpu-info-module",
+      "sourceRoot": "libs/cpu-info-module/src",
+      "prefix": "treefood-nx-angular",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/cpu-info-module/tsconfig.lib.json",
+            "project": "libs/cpu-info-module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/cpu-info-module/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cpu-info-module/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/cpu-info-module/**"
+            ]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "cpu-info-common": {
+      "projectType": "library",
+      "root": "libs/cpu-info-common",
+      "sourceRoot": "libs/cpu-info-common/src",
+      "prefix": "treefood-nx-angular",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/cpu-info-common/tsconfig.lib.json",
+            "project": "libs/cpu-info-common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/cpu-info-common/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cpu-info-common/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/cpu-info-common/**"
+            ]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

@@ -1,0 +1,15 @@
+.type {
+  color: grey;
+}
+
+.settings-page {
+  padding: 10px;
+}
+
+.inclusions {
+  display: flex;
+  flex-flow: row wrap;
+  .item {
+    width: 33%;
+  }
+}

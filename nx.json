@@ -25,6 +25,12 @@
     "cpu-info-ui-e2e": {
       "tags": [],
       "implicitDependencies": ["cpu-info-ui"]
+    },
+    "cpu-info-module": {
+      "tags": []
+    },
+    "cpu-info-common": {
+      "tags": []
     }
   }
 }

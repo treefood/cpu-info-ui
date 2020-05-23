@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="side-nav"></div>
+  <div class="left">
+    <mat-card *ngFor="let sensor of clocks" class="small-info">
+      <mat-card-title>{{ sensor.Name }}</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-semi-ellipse-meter
+          [max]="sensor.Max"
+          [value]="sensor.Value"
+          [name]="sensor.Name + ' ' + sensor.SensorType"
+          unit="MHz"
+        ></ci-semi-ellipse-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let sensor of temperatures" class="small-info">
+      <mat-card-title>{{ sensor.Name }} Temperature</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-semi-ellipse-meter
+          max="100"
+          [value]="sensor.Value"
+          [name]="sensor.Name + 'Temperature'"
+          unit="&deg;C"
+        >
+        </ci-semi-ellipse-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let sensor of voltages" class="small-info">
+      <mat-card-title>{{ sensor.Name }} Voltage</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-semi-ellipse-meter
+          [max]="sensor.Max"
+          [value]="sensor.Value"
+          [name]="sensor.Name + 'Voltage'"
+          unit="V"
+        >
+        </ci-semi-ellipse-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let sensor of fans" class="small-info">
+      <mat-card-title>{{ sensor.Name }} Speed</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-semi-ellipse-meter
+          [max]="sensor.Max"
+          [value]="sensor.Value"
+          [name]="sensor.Name + 'Fan'"
+          unit="RPM"
+        >
+        </ci-semi-ellipse-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let sensor of flows" class="small-info">
+      <mat-card-title>{{ sensor.Name }} Flow</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-semi-ellipse-meter
+          [max]="sensor.Max"
+          [value]="sensor.Value"
+          [name]="sensor.Name + 'Flow'"
+          unit="L/h"
+        >
+        </ci-semi-ellipse-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="right">
+    <mat-card class="big-info" *ngFor="let sensor of loads">
+      <mat-card-title>{{ sensor.Name }}</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-circle-meter [max]="100" [value]="sensor.Value"></ci-circle-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="big-info" *ngFor="let sensor of controls">
+      <mat-card-title>{{ sensor.Name }}</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-circle-meter [max]="100" [value]="sensor.Value"></ci-circle-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="big-info" *ngFor="let sensor of levels">
+      <mat-card-title>{{ sensor.Name }}</mat-card-title>
+      <mat-card-subtitle>{{ sensor.ParentName }}</mat-card-subtitle>
+      <mat-card-content>
+        <span spacer></span>
+        <ci-circle-meter [max]="100" [value]="sensor.Value"></ci-circle-meter>
+        <span spacer></span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
