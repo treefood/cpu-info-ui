@@ -1,11 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
 
 @Component({
   selector: 'ci-circle-meter',
   templateUrl: './circle-meter.component.html',
   styleUrls: ['./circle-meter.component.scss']
 })
-export class CircleMeterComponent implements OnInit {
+export class CircleMeterComponent implements OnInit, OnChanges {
   @Input() value: number;
   @Input() max: number;
   fillValue: number = 0;
@@ -14,6 +20,11 @@ export class CircleMeterComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.determineFillValue();
+    this.determineDisplayPercentage();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
     this.determineFillValue();
     this.determineDisplayPercentage();
   }

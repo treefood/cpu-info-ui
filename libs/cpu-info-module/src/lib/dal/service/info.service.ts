@@ -37,7 +37,19 @@ export class InfoService {
       this.http
         .get<Sensor[]>('http://zane-pc:8080/sensors')
         .subscribe(sensors => {
-          this.sensors = sensors;
+          if (this.sensors.length > 0) {
+            // debugger;
+            this.sensors.map(x => {
+              let newSensorInfo = sensors.find(
+                sensor => sensor.Identifier === x.Identifier
+              );
+              x.Max = newSensorInfo.Max;
+              x.Min = newSensorInfo.Min;
+              x.Value = newSensorInfo.Value;
+            });
+          } else {
+            this.sensors = sensors;
+          }
           switch (this.currentDisplay) {
             case 'preferred':
               let newDisplaySensors = [];
@@ -49,7 +61,7 @@ export class InfoService {
               this.displaySensors = newDisplaySensors;
               break;
             default:
-              this.displaySensors = sensors;
+              this.displaySensors = this.sensors;
               break;
           }
           this.info$.next(this.displaySensors);

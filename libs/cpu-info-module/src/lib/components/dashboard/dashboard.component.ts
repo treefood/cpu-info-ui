@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hardware, InfoService, Sensor, SensorType } from '../../dal';
 
@@ -55,7 +55,11 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  constructor(private service: InfoService, private route: ActivatedRoute) {}
+  constructor(
+    private service: InfoService,
+    private route: ActivatedRoute,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.service.getHardware().subscribe(hardware => {
