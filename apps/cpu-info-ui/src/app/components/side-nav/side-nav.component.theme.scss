@@ -1,0 +1,19 @@
+@mixin side-nav-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .side-nav-container {
+    background-color: mix($background, $foreground, 93%);
+    .side-nav-item {
+      color: $primary;
+    }
+    .current {
+      color: $foreground;
+      background-color: mix($background, $foreground, 90%);
+    }
+  }
+}

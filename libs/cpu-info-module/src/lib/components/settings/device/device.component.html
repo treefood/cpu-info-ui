@@ -1,0 +1,36 @@
+<div class="settings-page">
+  <mat-card *ngIf="hardware">
+    <div class="card-title-container">
+      <mat-button mat-icon-button color="primary" matRipple (click)="back()"
+        ><mat-icon>navigate_before</mat-icon></mat-button
+      >
+      <span>
+        <mat-card-title>
+          {{ hardware.Name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ hardware.HardwareType | betterTerm }}
+        </mat-card-subtitle>
+      </span>
+    </div>
+
+    <mat-card-content>
+      <!-- <div> -->
+      <mat-list>
+        <mat-list-item *ngFor="let sensor of sensors" (click)="select(sensor)">
+          <!-- <div> -->
+          <mat-checkbox>
+            <span class="name">{{ sensor.Name }}</span>
+            <span class="type"
+              >({{ sensor.SensorType | betterTerm }} measured in
+              {{ sensor.SensorType | unit }})</span
+            >
+          </mat-checkbox>
+
+          <!-- </div> -->
+        </mat-list-item>
+      </mat-list>
+      <!-- </div> -->
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,17 @@
+@mixin list-navigation-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent );
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  treefood-list-navigation {
+    .mat-list-item {
+      border-bottom-color: mix($foreground, $background, 50%);
+      border-top-color: mix($foreground, $background, 50%);
+    }
+    .mat-list-item-content {
+      color: mix($foreground, $background, 87%);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
 import { Hardware } from '../models';
@@ -78,14 +78,14 @@ export class InfoService {
     }, 20000);
   }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error instanceof ErrorEvent) {
-      console.log('an Application error occured:', error.statusText);
-    } else {
-      console.log('Server has returned an error code:', error.status);
-      console.log('error body:', error.error);
-    }
-  }
+  // private handleError(error: HttpErrorResponse) {
+  //   if (error instanceof ErrorEvent) {
+  //     console.log('an Application error occured:', error.statusText);
+  //   } else {
+  //     console.log('Server has returned an error code:', error.status);
+  //     console.log('error body:', error.error);
+  //   }
+  // }
 
   getSensors() {
     return this.info$.asObservable();
@@ -120,5 +120,6 @@ export class InfoService {
 
   getPreferred(): Observable<Sensor[]> {
     return this.http.get<Sensor[]>('http://zane-pc:8080/preferred');
+    // localStorage.getItem('')
   }
 }

@@ -15,14 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@treefood-nx-angular/cpu-info-module": [
-        "libs/cpu-info-module/src/index.ts"
+      "@treefood/cpu-info/module": [
+        "libs/cpu-info-module/index.ts"
       ],
-      "@treefood-nx-angular/cpu-info-common": [
-        "libs/cpu-info-common/src/index.ts"
+      "@treefood/cpu-info/common": [
+        "libs/cpu-info-common/index.ts"
       ]
     }
   },
   "exclude": ["node_modules", "tmp"],
-  "include": ["libs/cpu-info-common/src/index.ts"]
+  "include": ["libs/cpu-info-common/index.ts", "libs/cpu-info-module/index.ts"]
 }

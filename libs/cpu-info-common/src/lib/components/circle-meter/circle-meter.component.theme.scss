@@ -1,0 +1,22 @@
+@mixin circle-meter-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  ci-circle-meter {
+    .fill-circle {
+      stroke: $primary;
+    }
+
+    .percentage {
+      color: transparentize($foreground, 0.13);
+    }
+
+    .background-circle {
+      stroke: mix($background, $foreground, 84%);
+    }
+  }
+}

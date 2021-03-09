@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CpuInfoModuleModule } from '@treefood-nx-angular/cpu-info-module';
+import { CpuInfoModuleModule } from '@treefood/cpu-info';
 
 export const routes: Routes = [
   {

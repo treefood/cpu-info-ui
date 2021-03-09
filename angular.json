@@ -44,9 +44,10 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -86,10 +87,7 @@
               "apps/cpu-info-ui/tsconfig.app.json",
               "apps/cpu-info-ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/cpu-info-ui/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/cpu-info-ui/**"]
           }
         },
         "test": {
@@ -124,13 +122,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/cpu-info-ui-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/cpu-info-ui-e2e/**"
-            ]
+            "tsConfig": ["apps/cpu-info-ui-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/cpu-info-ui-e2e/**"]
           }
         }
       }
@@ -156,13 +149,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/cpu-info-module/tsconfig.lib.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/cpu-info-module/**"
-            ]
+            "tsConfig": ["libs/cpu-info-module/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/cpu-info-module/**"]
           }
         }
       },
@@ -193,13 +181,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/cpu-info-common/tsconfig.lib.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/cpu-info-common/**"
-            ]
+            "tsConfig": ["libs/cpu-info-common/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/cpu-info-common/**"]
           }
         }
       },

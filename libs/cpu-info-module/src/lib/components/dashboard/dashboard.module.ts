@@ -5,7 +5,7 @@ import {
   CircleMeterModule,
   SemiEllipseMeterModule,
   VerticalMeterModule
-} from '@cpu-info/common/src';
+} from '@treefood/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 

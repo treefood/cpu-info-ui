@@ -1,0 +1,20 @@
+treefood-list-navigation {
+  .mat-list-base {
+    .mat-list-item:first-of-type {
+      border-top-style: solid;
+      border-top-width: 1px;
+    }
+    .mat-list-item {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      height: 60px;
+      display: flex;
+      .mat-list-item-content {
+        width: 100%;
+        .name {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

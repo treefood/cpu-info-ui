@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoService, Sensor } from '../../dal';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ListNavigationModel } from '@treefood/common';
+import { Subscription } from 'rxjs';
+import { Hardware, InfoService, Sensor } from '../../dal';
+import { BetterTermPipe } from '../../dal/pipes/better-term.pipe';
 
 @Component({
   selector: 'ci-settings',
@@ -9,10 +13,22 @@ import { InfoService, Sensor } from '../../dal';
 export class SettingsComponent implements OnInit {
   sensors: Sensor[] = [];
   selectedSensors: Sensor[] = [];
+  hardware: Hardware[] = [];
+  list: ListNavigationModel[] = [];
+  localSubscriptions$: Subscription = new Subscription();
 
-  constructor(private infoService: InfoService) {}
+  constructor(
+    private infoService: InfoService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private betterTerm: BetterTermPipe
+  ) {}
 
   ngOnInit(): void {
+    this.infoService.getHardware().subscribe(items => {
+      this.hardware = items;
+      this.assembleList();
+    });
     this.infoService.getSensorsOnce().subscribe(
       sensors => {
         this.sensors = sensors.sort((a, b) => {
@@ -38,6 +54,19 @@ export class SettingsComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  assembleList() {
+    this.hardware?.map(item => {
+      this.list.push({
+        name: this.betterTerm.transform(item.Name),
+        path: `device/${item.Identifier.replace('/', '').replace(/\//gi, '-')}`
+      });
+    });
+  }
+
+  navigateToDevice(device: string) {
+    this.router.navigate([`${device}`], { relativeTo: this.route });
   }
 
   checkHandler(event, sensor: Sensor) {

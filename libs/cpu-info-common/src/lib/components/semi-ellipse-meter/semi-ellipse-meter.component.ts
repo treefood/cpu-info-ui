@@ -23,13 +23,13 @@ export class SemiEllipseMeterComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.determineFillValue();
     this.max = Math.ceil(this.max);
-    this.value = parseFloat(this.value.toFixed(1));
+    this.value = parseFloat(this.value.toFixed(0));
   }
 
   ngOnChanges(changes: SimpleChanges) {
     this.max = Math.ceil(this.max);
     this.determineFillValue();
-    this.value = parseFloat(this.value.toFixed(1));
+    this.value = parseFloat(this.value.toFixed(0));
   }
 
   determineFillValue() {

@@ -1,0 +1,14 @@
+@import './device/device.component.theme';
+
+@mixin settings-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent );
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  @include device-theme($theme);
+  ci-settings {
+  }
+}

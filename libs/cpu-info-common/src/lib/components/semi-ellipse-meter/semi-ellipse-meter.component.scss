@@ -9,10 +9,6 @@
   stroke: mix(#121212, white, 84%);
 }
 
-.fill-ellipsis {
-  stroke: #03dac6;
-}
-
 .meter-container {
   display: flex;
   align-items: center;
@@ -33,15 +29,15 @@
     margin-top: 30px;
     font-size: 18px;
     font-weight: 500;
-    color: white;
-    opacity: 87%;
+    // color: white;
+    // opacity: 87%;
   }
   .unit {
     margin: 0;
     font-size: 12px;
     font-weight: 100;
-    color: white;
-    opacity: 60%;
+    // color: white;
+    // opacity: 60%;
   }
 }
 
@@ -62,8 +58,8 @@
   .min,
   .max {
     max-width: 35px;
-    color: white;
-    opacity: 60%;
+    // color: white;
+    // opacity: 60%;
     font-size: 11px;
   }
 }

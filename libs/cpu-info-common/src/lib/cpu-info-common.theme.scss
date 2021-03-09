@@ -1,0 +1,14 @@
+@import './components/circle-meter/circle-meter.component.theme.scss';
+@import './components/semi-ellipse-meter/semi-ellipse-meter.component.theme.scss';
+
+@mixin cpu-info-common-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  @include circle-meter-theme($theme);
+  @include semi-ellipse-component-theme($theme);
+}

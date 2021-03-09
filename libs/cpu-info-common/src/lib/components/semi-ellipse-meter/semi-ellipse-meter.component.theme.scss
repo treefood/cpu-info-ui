@@ -1,0 +1,28 @@
+@mixin semi-ellipse-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  ci-semi-ellipse-meter {
+    .fill-ellipsis {
+      stroke: $primary;
+    }
+
+    .value-container {
+      .value {
+        color: transparentize($foreground, 0.13);
+      }
+      .unit {
+        color: transparentize($foreground, 0.4);
+      }
+    }
+
+    .min,
+    .max {
+      color: transparentize($foreground, 0.4);
+    }
+  }
+}

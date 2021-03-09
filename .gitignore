@@ -38,6 +38,9 @@ testem.log
 /treefood-nx-angular-win32-x64
 /cpu-info-ui-linux-armv7l
 /cpu-info-ui-win32-x64
+cpu-info-ui-linux-armv7l.tar
+cpu-info
+cpu-info.pub
 # System Files
 .DS_Store
 Thumbs.db

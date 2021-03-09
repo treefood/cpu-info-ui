@@ -1,0 +1,27 @@
+@mixin device-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $emphasis: map-get($theme, emphasis);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  treefood-device {
+    .type {
+      color: mix($foreground, $background, 60%);
+    }
+    .card-title-container {
+      .mat-icon {
+        color: $primary;
+      }
+    }
+    .mat-checkbox-frame {
+      border-color: $primary;
+    }
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: $accent;
+    }
+    .mat-list-item:active {
+      background-color: transparentize($primary, 0.5);
+    }
+  }
+}

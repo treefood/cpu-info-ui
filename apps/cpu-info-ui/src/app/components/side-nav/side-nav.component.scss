@@ -4,12 +4,10 @@
   height: 100%;
   width: 100%;
   align-items: center;
-  background-color: mix(#121212, white, 93%);
   box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
   .side-nav-item {
     text-align: center;
     width: calc(100% - 5px);
-    color: #03dac5;
     cursor: pointer;
     &:focus {
       outline: none;
@@ -17,10 +15,9 @@
   }
   .current {
     border-left-width: 5px;
-    color: white;
+
     transition: 0.2s;
     border-left: 5px solid;
-    background-color: mix(#121212, white, 90%);
   }
 }
 
